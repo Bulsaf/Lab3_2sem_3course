@@ -12,37 +12,45 @@
 	</Window.Resources>
 
 	<Window.Styles>
-		<!-- Стиль для ImageWithArrowsUserControl -->
 		<Style Selector="local|ImageWithArrowsUserControl">
 			<Setter Property="Width" Value="200"/>
-			<Setter Property="Effect" Value="{StaticResource blur}"/>
+			<Setter Property="Effect">
+				<BlurEffect Radius="3"/>
+			</Setter>
+		</Style>
+
+		<Style Selector="StackPanel">
+			<Setter Property="Margin" Value="25"/>
+			<Setter Property="Effect">
+				<DropShadowEffect BlurRadius="10" Color="Black" Opacity="0"/>
+			</Setter>
+			<Setter Property="RenderTransform">
+				<TransformGroup>
+					<ScaleTransform ScaleX="1"/>
+					<ScaleTransform ScaleY="1"/>
+				</TransformGroup>
+			</Setter>
+			<Setter Property="RenderTransformOrigin" Value="0.5 0.5"/>
 
 		</Style>
 
-		<!-- Стиль для StackPanel -->
-		<Style Selector="StackPanel">
-			<Setter Property="Margin" Value="25"/>
-			<Setter Property="Effect" Value="{StaticResource shadow}"/>
-			<Setter Property="RenderTransformOrigin" Value="0.5 0.5"/>
-			<Setter Property="RenderTransform">
-				<ScaleTransform ScaleX="1" ScaleY="1"/>
-			</Setter>
-
+		<Style Selector="StackPanel:pointerover">
+			<Setter Property="ZIndex" Value="99"/>
 		</Style>
 	</Window.Styles>
 
 	<ScrollViewer VerticalScrollBarVisibility="Visible">
-		<WrapPanel Orientation="Horizontal">
-			<StackPanel>
+		<WrapPanel Orientation="Horizontal" Name="wrapPanel">
+			<StackPanel PointerEntered="Panel_PointerEnter" PointerExited="Panel_PointerLeave">
 				<local:ImageWithArrowsUserControl/>
 			</StackPanel>
-			<StackPanel>
+			<StackPanel PointerEntered="Panel_PointerEnter" PointerExited="Panel_PointerLeave">
 				<local:ImageWithArrowsUserControl/>
 			</StackPanel>
-			<StackPanel>
+			<StackPanel PointerEntered="Panel_PointerEnter" PointerExited="Panel_PointerLeave">
 				<local:ImageWithArrowsUserControl/>
 			</StackPanel>
-			<StackPanel>
+			<StackPanel PointerEntered="Panel_PointerEnter" PointerExited="Panel_PointerLeave">
 				<local:ImageWithArrowsUserControl/>
 			</StackPanel>
 		</WrapPanel>
