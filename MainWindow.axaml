@@ -1,0 +1,50 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Lab3_2sem_3course.MainWindow"
+        Title="MainWindow"
+		xmlns:local="clr-namespace:Lab3_2sem_3course;assembly=Lab3_2sem_3course">
+	<Window.Resources>
+		<BlurEffect x:Key="blur" Radius="3"/>
+		<DropShadowEffect x:Key="shadow" BlurRadius="10" Color="Black" Opacity="0"/>
+	</Window.Resources>
+
+	<Window.Styles>
+		<!-- Стиль для ImageWithArrowsUserControl -->
+		<Style Selector="local|ImageWithArrowsUserControl">
+			<Setter Property="Width" Value="200"/>
+			<Setter Property="Effect" Value="{StaticResource blur}"/>
+
+		</Style>
+
+		<!-- Стиль для StackPanel -->
+		<Style Selector="StackPanel">
+			<Setter Property="Margin" Value="25"/>
+			<Setter Property="Effect" Value="{StaticResource shadow}"/>
+			<Setter Property="RenderTransformOrigin" Value="0.5 0.5"/>
+			<Setter Property="RenderTransform">
+				<ScaleTransform ScaleX="1" ScaleY="1"/>
+			</Setter>
+
+		</Style>
+	</Window.Styles>
+
+	<ScrollViewer VerticalScrollBarVisibility="Visible">
+		<WrapPanel Orientation="Horizontal">
+			<StackPanel>
+				<local:ImageWithArrowsUserControl/>
+			</StackPanel>
+			<StackPanel>
+				<local:ImageWithArrowsUserControl/>
+			</StackPanel>
+			<StackPanel>
+				<local:ImageWithArrowsUserControl/>
+			</StackPanel>
+			<StackPanel>
+				<local:ImageWithArrowsUserControl/>
+			</StackPanel>
+		</WrapPanel>
+	</ScrollViewer>
+</Window>
