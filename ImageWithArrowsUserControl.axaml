@@ -15,6 +15,7 @@
 		<Style Selector="Image.natureImageStyle">
 			<Setter Property="RenderTransformOrigin" Value="0.5 0.5"/>
 			<Setter Property="StretchDirection" Value="DownOnly"/>
+			<Setter Property="Stretch" Value="Uniform"/>
 			<Setter Property="Width" Value="150"/>
 		</Style>
 
